@@ -1,6 +1,6 @@
 # Effective Training of Convolutional Neural Networks with Low-bitwidth Weights and Activations
 
-This project hosts the code for implementing the algorithms as presented in our paper:
+This project hosts the code for implementing the algorithms as presented in our papers:
 
 ````
 @article{zhuang2019effective,
@@ -9,6 +9,15 @@ This project hosts the code for implementing the algorithms as presented in our 
   journal={arXiv preprint arXiv:1908.04680},
   year={2019}
 }
+
+@inproceedings{zhuang2018towards,
+  title={Towards effective low-bitwidth convolutional neural networks},
+  author={Zhuang, Bohan and Shen, Chunhua and Tan, Mingkui and Liu, Lingqiao and Reid, Ian},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={7920--7928},
+  year={2018}
+}
+
 ````
 
 ## ipytorch
