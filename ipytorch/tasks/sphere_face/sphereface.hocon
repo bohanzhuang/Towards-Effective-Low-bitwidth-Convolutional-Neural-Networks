@@ -1,0 +1,37 @@
+
+#  ------------ General options ----------------------------------------
+save_path = "/home/liujing/NFS/TPAMI_channel_pruning/sphereface/"
+dataPath = "/home/dataset/"  # path for loading data set
+dataset = "sphere"  # options: imagenet | cifar10 | cifar100 | imagenet100 | mnist | sphere
+nGPU = 1  # number of GPUs to use by default
+GPU = 0  # default gpu to use, options: range(nGPU)
+visible_devices = "6"
+
+# ------------- Data options -------------------------------------------
+nThreads = 10  # number of data loader threads
+
+# ---------- Optimization options --------------------------------------
+nEpochs = 40  # number of total epochs to train
+nIters = 28000
+batchSize = 512  # mini-batch size
+momentum = 0.9  # momentum
+weightDecay = 5e-4  # weight decay 1e-4
+
+# lr master for optimizer 1 (mask vector d)
+lr = 0.1  # initial learning rate
+lrPolicy = "multi_step"  # options: multi_step | linear | exp | const | step
+power = 0.98  # power for inv policy (lr_policy)
+step = [16000, 24000]  # step for linear or exp learning rate policy
+decayRate = 0.1 # lr decay rate
+endlr = -1
+
+# ---------- Model options ---------------------------------------------
+netType = "SphereNet"  # options:SphereMobileNet_v2 | SphereNet
+experimentID = "depth10-20190403"
+depth = 10
+featureDim = 512
+drawNetwork = False
+
+# ---------- Resume or Retrain options ---------------------------------------------
+resume = ""
+retrain = ""

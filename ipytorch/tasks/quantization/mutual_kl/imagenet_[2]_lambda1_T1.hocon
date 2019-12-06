@@ -1,0 +1,51 @@
+#  ------------ General options ----------------------------------------
+save_path = "/home/xxx"
+dataPath = "/home/datasets" # path for loading data set
+dataset = "imagenet" # options: imagenet | cifar10 | cifar100 | imagenet100 | mnist
+nGPU = 4 # number of GPUs to use by default
+GPU = 0  # default gpu to use, options: range(nGPU)
+visible_devices = "0,1,2,3"
+
+# ------------- Data options -------------------------------------------
+nThreads = 16  # number of data loader threads
+
+# ---------- Optimization options --------------------------------------
+nEpochs = 30  # number of total epochs to train 400
+batchSize = 256  # mini-batch size 128
+momentum = 0.9  # momentum 0.9
+weightDecay = 1e-4  # weight decay 1e-4
+
+# lr master for optimizer 1 (mask vector d)
+ori_opt_type = "SGD"
+quan_opt_type = "SGD"
+ori_lr = 0.001  # initial learning rate
+quan_lr = 0.005
+lrPolicy = "multi_step"  # options: multi_step | linear | exp | const | step
+power = 0.98  # power for inv policy (lr_policy)
+step = [15, 25]  # step for linear or exp learning rate policy
+decayRate = 0.1 # lr decay rate
+endlr = -1
+
+# ---------- Model options ---------------------------------------------
+netType = "ResNet"  # options: ResNet | PreResNet | GreedyNet | NIN | LeNet5 | LeNet500300 | DenseNet_Cifar | AlexNet
+experimentID = "ori_sgd_quan_sgd_noquanfirstlasttrue_step[15,25]_mutual_kl_standard_aug_0116"
+teacher_depth = 18  # resnet depth: (n-2)%6==0
+student_depth = 18
+nClasses = 1000  # number of classes in the dataset
+wideFactor = 1  # wide factor for wide-resnet
+drawNetwork = False
+
+# ---------- Quantization options ---------------------------------------------
+qw = [4]
+qa = [4]
+teacher_lambda = 1
+student_lambda = 0.5
+loss_lambda = 0.5
+T = [1]
+
+# ---------- Resume or Retrain options ---------------------------------------------
+ori_retrain = "/home/bohan/Codes/model/resnet18.pth"
+quan_retrain = "/home/bohan/Codes/model/resnet18.pth"
+resume = ""
+
+repeat = 1

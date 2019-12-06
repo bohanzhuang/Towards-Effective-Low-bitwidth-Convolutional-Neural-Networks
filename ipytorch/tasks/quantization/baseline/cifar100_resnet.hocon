@@ -1,0 +1,43 @@
+#  ------------ General options ----------------------------------------
+save_path = "/home/liujing/Experiments/Quantization/TELCNN/cifar100/"
+dataPath = "/home/dataset"  # path for loading data set
+dataset = "cifar100" # options: imagenet | cifar10 | cifar100 | imagenet100 | mnist
+nGPU = 1  # number of GPUs to use by default
+GPU = 0  # default gpu to use, options: range(nGPU)
+visible_devices = "5"
+
+# ------------- Data options -------------------------------------------
+nThreads = 4  # number of data loader threads
+
+# ---------- Optimization options --------------------------------------
+nEpochs = 200  # number of total epochs to train 400
+batchSize = 128  # mini-batch size 128
+momentum = 0.9  # momentum 0.9
+weightDecay = 1e-4  # weight decay 1e-4
+opt_type = "SGD"
+
+# lr master for optimizer 1 (mask vector d)
+lr = 0.1  # initial learning rate
+lrPolicy = "multi_step"  # options: multi_step | linear | exp | const | step
+power = 0.98  # power for inv policy (lr_policy)
+step = [60, 120]  # step for linear or exp learning rate policy
+decayRate = 0.1 # lr decay rate
+endlr = -1
+
+# ---------- Model options ---------------------------------------------
+netType = "ResNet"  # options: ResNet | PreResNet | GreedyNet | NIN | LeNet5 | LeNet500300 | DenseNet_Cifar | AlexNet
+experimentID = "sgd_step[60,120]_noquanfirstlast_e200_test_1108"
+depth = 20  # resnet depth: (n-2)%6==0
+nClasses = 100  # number of classes in the dataset
+wideFactor = 1  # wide factor for wide-resnet
+drawNetwork = False
+
+# ---------- Quantization options ---------------------------------------------
+quantization_k = 2
+use_differeanble = False
+
+# ---------- Resume or Retrain options ---------------------------------------------
+resume = ""
+retrain = ""
+
+repeat = 1
