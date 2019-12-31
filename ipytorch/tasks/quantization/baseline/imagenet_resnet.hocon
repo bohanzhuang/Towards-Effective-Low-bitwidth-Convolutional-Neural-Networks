@@ -1,0 +1,43 @@
+#  ------------ General options ----------------------------------------
+save_path = "./"
+dataPath = "/fast/users/a1675776/data/" # path for loading data set
+dataset = "imagenet" # options: imagenet | cifar10 | cifar100 | imagenet100 | mnist
+nGPU = 2 # number of GPUs to use by default
+GPU = 0  # default gpu to use, options: range(nGPU)
+
+# ------------- Data options -------------------------------------------
+nThreads = 10  # number of data loader threads
+
+# ---------- Optimization options --------------------------------------
+nEpochs = 30  # number of total epochs to train 400
+batchSize = 256  # mini-batch size 128
+momentum = 0.9  # momentum 0.9
+weightDecay = 1e-4  # weight decay 1e-4
+opt_type = "SGD"
+
+# lr master for optimizer 1 (mask vector d)
+lr = 0.005  # initial learning rate
+lrPolicy = "multi_step"  # options: multi_step | linear | exp | const | step
+power = 0.98  # power for inv policy (lr_policy)
+step = [15, 25]  # step for linear or exp learning rate policy
+decayRate = 0.1 # lr decay rate
+endlr = -1
+
+# ---------- Model options ---------------------------------------------
+netType = "PreResNet"  # options: ResNet | PreResNet | GreedyNet | NIN | LeNet5 | LeNet500300 | DenseNet_Cifar | AlexNet
+experimentID = ""
+depth = 18  # resnet depth: (n-2)%6==0
+nClasses = 1000  # number of classes in the dataset
+wideFactor = 1  # wide factor for wide-resnet
+drawNetwork = False
+
+# ---------- Quantization options ---------------------------------------------
+qw = 2
+qa = 2
+use_differeanble = False
+
+# ---------- Resume or Retrain options ---------------------------------------------
+resume = ""
+retrain = "/fast/users/a1675776/TPAMI2019_quantization/pretrained_model/preresnet-18.pth"
+
+repeat = 1

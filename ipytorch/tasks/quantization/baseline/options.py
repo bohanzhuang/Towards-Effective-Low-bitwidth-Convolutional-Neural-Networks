@@ -16,7 +16,7 @@ class Option(NetOption):
         self.dataset = self.conf['dataset']  # options: imagenet | cifar10 | cifar100 | imagenet100 | mnist
         self.nGPU = self.conf['nGPU']  # number of GPUs to use by default
         self.GPU = self.conf['GPU']  # default gpu to use, options: range(nGPU)
-        self.visible_devices = self.conf['visible_devices']
+#        self.visible_devices = self.conf['visible_devices']
 
         # ------------- Data options -------------------------------------------
         self.nThreads = self.conf['nThreads']  # number of data loader threads
@@ -67,14 +67,14 @@ class Option(NetOption):
                 self.batchSize, self.lr, self.opt_type, self.qw, self.qa,
                 self.nEpochs, self.experimentID)
 
-        if os.path.exists(self.save_path):
-            print("{} file exist!".format(self.save_path))
-            action = input("Select Action: d (delete) / q (quit):").lower().strip()
-            act = action
-            if act == 'd':
-                shutil.rmtree(self.save_path)
-            else:
-                raise OSError("Directory {} exits!".format(self.save_path))
+#        if os.path.exists(self.save_path):
+#            print("{} file exist!".format(self.save_path))
+#            action = input("Select Action: d (delete) / q (quit):").lower().strip()
+#            act = action
+#            if act == 'd':
+#                shutil.rmtree(self.save_path)
+#            else:
+#                raise OSError("Directory {} exits!".format(self.save_path))
 
         if not os.path.exists(self.save_path):
             os.makedirs(self.save_path)

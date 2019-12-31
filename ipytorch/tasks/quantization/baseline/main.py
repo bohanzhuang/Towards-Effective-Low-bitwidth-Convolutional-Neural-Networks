@@ -47,7 +47,7 @@ class ExperimentDesign:
         self.test_input = None
 
         os.environ['CUDA_DEVICE_ORDER'] = "PCI_BUS_ID"
-        os.environ['CUDA_VISIBLE_DEVICES'] = self.settings.visible_devices
+#        os.environ['CUDA_VISIBLE_DEVICES'] = self.settings.visible_devices
 
         self.settings.set_save_path()
         self.logger = self.set_logger()
@@ -855,9 +855,9 @@ class ExperimentDesign:
 
 def main():
     parser = argparse.ArgumentParser(description='Baseline')
-    parser.add_argument('conf_path', type=str, metavar='conf_path',
+    parser.add_argument('--conf_path', type=str, metavar='conf_path',
                         help='input batch size for training (default: 64)')
-    parser.add_argument('id', type=int, metavar='experiment_id',
+    parser.add_argument('--id', type=int, metavar='experiment_id',
                         help='Experiment ID')
     args = parser.parse_args()
 
