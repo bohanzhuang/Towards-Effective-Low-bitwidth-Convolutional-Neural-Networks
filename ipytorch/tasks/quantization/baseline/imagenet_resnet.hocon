@@ -1,6 +1,6 @@
 #  ------------ General options ----------------------------------------
 save_path = "./"
-dataPath = "/fast/users/a1675776/data/" # path for loading data set
+dataPath = "./data/" # path for loading data set
 dataset = "imagenet" # options: imagenet | cifar10 | cifar100 | imagenet100 | mnist
 nGPU = 2 # number of GPUs to use by default
 GPU = 0  # default gpu to use, options: range(nGPU)
@@ -38,6 +38,6 @@ use_differeanble = False
 
 # ---------- Resume or Retrain options ---------------------------------------------
 resume = ""
-retrain = "/fast/users/a1675776/TPAMI2019_quantization/pretrained_model/preresnet-18.pth"
+retrain = "./pretrained_model/preresnet-18.pth"
 
 repeat = 1
