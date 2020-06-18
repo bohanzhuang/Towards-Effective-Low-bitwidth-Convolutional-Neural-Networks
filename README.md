@@ -1,4 +1,4 @@
-# Effective Training of Convolutional Neural Networks with Low-bitwidth Weights and Activations
+# Towards effective low-bitwidth convolutional neural networks
 
 This project hosts the code for implementing the algorithms as presented in our papers:
 
