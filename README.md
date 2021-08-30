@@ -3,11 +3,11 @@
 This project hosts the code for implementing the algorithms as presented in our papers:
 
 ````
-@article{zhuang2019effective,
+@article{zhuang2021effective,
   title={Effective Training of Convolutional Neural Networks with Low-bitwidth Weights and Activations},
   author={Zhuang, Bohan and Liu, Jing and Tan, Mingkui and Liu, Lingqiao and Reid, Ian and Shen, Chunhua},
-  journal={arXiv preprint arXiv:1908.04680},
-  year={2019}
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2021}
 }
 
 @inproceedings{zhuang2018towards,
